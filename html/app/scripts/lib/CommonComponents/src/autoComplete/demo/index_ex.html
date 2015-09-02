@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>autoComplete demo</title>
+    <meta name="description" content="">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  </head>  
+  <body>
+    <div style="float:left; width:230px;margin: 30px;">
+      <input id="login" type="text" class="form-control" placeholder="请输入邮箱" >
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+    <script src="../autoComplete.js"></script>
+    <script type="text/javascript">
+      var emailSource = [
+        {id:0,name:"sina.com",func: "1212"}, 
+        {id:1,name:"163.com",func: "1212"}, 
+        {id:2,name:"qq.com",func: "1212"}, 
+        {id:3,name:"126.com"}, 
+        {id:4,name:"vip.sina.com",func: "1212"}, 
+        {id:5,name:"sina.cn",func: "1212"}, 
+        {id:6,name:"hotmail.com"}, 
+        {id:7,name:"gmail.com"}, 
+        {id:8,name:"sodu.com"}, 
+        {id:9,name:"139.com"}, 
+        {id:10,name:"wo.com.cn"}, 
+        {id:11,name:"189.cn"}, 
+        {id:12,name:"21cn.com"},
+        {id:0,name:"sina.com",func: "1212"}, 
+        {id:1,name:"163.com",func: "1212"}, 
+        {id:2,name:"qq.com",func: "1212"}, 
+        {id:3,name:"126.com"}, 
+        {id:4,name:"vip.sina.com",func: "1212"}, 
+        {id:5,name:"sina.cn",func: "1212"}, 
+        {id:6,name:"hotmail.com"}, 
+        {id:7,name:"gmail.com"}, 
+        {id:8,name:"sodu.com"}, 
+        {id:9,name:"139.com"}, 
+        {id:10,name:"wo.com.cn"}, 
+        {id:11,name:"189.cn"}, 
+        {id:12,name:"21cn.com"},
+        {id:0,name:"sina.com",func: "1212"}, 
+        {id:1,name:"163.com",func: "1212"}, 
+        {id:2,name:"qq.com",func: "1212"}, 
+        {id:3,name:"126.com"}, 
+        {id:4,name:"vip.sina.com",func: "1212"}, 
+        {id:5,name:"sina.cn",func: "1212"}, 
+        {id:6,name:"hotmail.com"}, 
+        {id:7,name:"gmail.com"}, 
+        {id:8,name:"sodu.com"}, 
+        {id:9,name:"139.com"}, 
+        {id:10,name:"wo.com.cn"}, 
+        {id:11,name:"189.cn"}, 
+        {id:12,name:"21cn.com"},
+        {id:0,name:"sina.com",func: "1212"}, 
+        {id:1,name:"163.com",func: "1212"}, 
+        {id:2,name:"qq.com",func: "1212"}, 
+        {id:3,name:"126.com"}, 
+        {id:4,name:"vip.sina.com",func: "1212"}, 
+        {id:5,name:"sina.cn",func: "1212"}, 
+        {id:6,name:"hotmail.com"}, 
+        {id:7,name:"gmail.com"}, 
+        {id:8,name:"sodu.com"}, 
+        {id:9,name:"139.com"}, 
+        {id:10,name:"wo.com.cn"}, 
+        {id:11,name:"189.cn"}, 
+        {id:12,name:"21cn.com"},
+        {id:0,name:"sina.com",func: "1212"}, 
+        {id:1,name:"163.com",func: "1212"}, 
+        {id:2,name:"qq.com",func: "1212"}, 
+        {id:3,name:"126.com"}, 
+        {id:4,name:"vip.sina.com",func: "1212"}, 
+        {id:5,name:"sina.cn",func: "1212"}, 
+        {id:6,name:"hotmail.com"}, 
+        {id:7,name:"gmail.com"}, 
+        {id:8,name:"sodu.com"}, 
+        {id:9,name:"139.com"}, 
+        {id:10,name:"wo.com.cn"}, 
+        {id:11,name:"189.cn"}, 
+        {id:12,name:"21cn.com"}
+      ];
+      /**
+       * 邮箱快速选择(自动联想)
+       */
+      $("#login").autoComplete({
+        displayMember: "name",
+        valueMember: "id",
+        minWidth: 250,
+        //至少输入2个字符后触发菜单项
+        minLength: 2,
+        //菜单项的数据源只能最多5项
+        maxDataLength: 15,
+        title: "请选择邮箱类型",
+        getSourceCallback: function(inputValue, e){
+          e.source(emailSource);
+        }
+      });
+    </script>
+  </body>
+</html>

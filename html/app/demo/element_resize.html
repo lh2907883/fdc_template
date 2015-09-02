@@ -1,0 +1,28 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../styles/resizeBox.css" />
+</head>
+ 
+<body>
+    <input id="btn1" type="button" value="reset" /> 
+    <input id="btn2" type="button" value="resize 'r1'" /> 
+    <div id="wrap" style="margin:30px;width:90%;height:500px;border:1px solid red;position:relative;">
+        <div id="r1" style="position:absolute;padding:30px;top:10px;left:10px;width:100px;height:100px;background-color:#333;border:30px solid red;"></div>
+        <div id="r2" style="position:absolute;top:120px;left:10px;width:100px;height:100px;background-color:#333;"></div>        
+    </div>
+
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../scripts/lib/resizebox.js"></script>
+    <script type="text/javascript">
+        $("#btn1").click(function(){
+            $("#wrap").resizeBox("reset");
+        });
+        $("#btn2").click(function(){
+            $("#wrap").resizeBox("resize", $("#r1"));
+        });
+        $("#wrap").resizeBox();
+    </script>
+</body>
+</html>

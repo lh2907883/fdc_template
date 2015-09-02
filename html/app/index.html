@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="scripts/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="scripts/lib/normalize.css/normalize.css" />
+    <link rel="stylesheet" href="scripts/lib/animate.css/animate.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" type="text/css" href="styles/resizeBox.css" />
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="scripts/lib/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!-- 页面导航栏 -->
+    <div id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-header">
+        <img src="images/logo.png"/>
+      </div>
+      <div class="navbar-collapse collapse" role="navigation">
+        <ul class="nav navbar-nav">
+          <li><a href="#"><span class="new">新建</span></a></li>
+          <li><a href="#"><span class="preview">预览</span></a></li>
+          <li><a href="#"><span class="myDoc">我的制作</span></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" style="margin-right:0;">
+          <li><a href="#">制作</a></li>
+          <li><a href="#">案例</a></li>
+          <li><a href="#">消息</a></li>
+          <li><a href="#">账号</a></li>
+          <li><a href="#">关于</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 页面主体内容 -->
+    <div id="mainWrap">
+      <!-- 左侧部分 -->
+      <div class="leftWrap" style="background-color:#555;">
+        <!-- 页面组导航 -->
+        <ul id="thumbView">
+                         
+        </ul>
+        <!-- 添加新页面组按钮 -->
+        <div class="page-wrap">
+          <div id="btnNewPage" class="s-page s-page-text-center">+</div>
+        </div>
+      </div>
+      <!-- 中间部分 -->
+      <div id="centerWrap" style="right:390px;">
+        <!-- 页面编辑器 -->
+        <div id="pagesWrap" class="simulator" style="border:1px solid #333;">
+        </div>        
+        <div class="pagesNavWrap">
+          <!-- 页面导航 -->
+          <ul id="pagesNavView" >
+          </ul>
+          <!-- 添加新页面按钮 -->
+          <li id="newPage"><span class="num">+</span></li>
+        </div>
+      </div>
+      <!-- 右侧工具栏部分 -->
+      <div id="rightWrap" style="width: 390px;">
+        <!-- 工具栏tab页 -->
+        <div id="toolsBtn">
+          <ul class="nav nav-left nav-stacked nav-tabs">
+            <li class="active" tag="label"><a href="#tool_label" data-toggle="tab" >文字</a></li>
+            <li tag="button"><a href="#tool_button" data-toggle="tab">按钮</a></li>
+            <li tag="image"><a href="#tool_image" data-toggle="tab">图片</a></li>
+            <li tag="background"><a href="#tool_background" data-toggle="tab">底图</a></li>
+            <li tag="music"><a href="#tool_music" data-toggle="tab">音乐</a></li>
+          </ul>
+        </div>
+        <!-- 工具栏 -->
+        <div id="tools" style="float:left;" class="tab-content">
+          <!-- 文本工具栏 -->
+          <div class="tab-pane active" id="tool_label">
+            <section class="des">
+              <article>
+                <h1>文字</h1>
+                <span>双击编辑文字,拖拽选框变形或移动位置,选中内容可进行动画效果编辑.</span>
+              </article>
+            </section>
+            <section>
+              <ul class="nav">
+                <li><a href="#">文字</a></li>
+              </ul>
+              <div class="btn-toggle" data-toggle="collapse" data-target="#tool_label_content">
+                <span class=" glyphicon glyphicon-chevron-up"></span>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              </div>
+              <article id="tool_label_content" class="collapse in form-horizontal">
+                <div class="form-group">
+                  <label class="col-xs-2 form-label">字体:</label>
+                  <div class="col-xs-10">
+                    <select class="form-control event-tool-fontFamily">
+                        <option value="microsoft yahei">微软雅黑</option>
+                        <option value="黑体">黑体</option>
+                        <option value="serif">serif</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-2 form-label">字号:</label>
+                  <div class="col-xs-3">
+                    <select class="form-control event-tool-fontSize">
+                      <option value="12px">12px</option>
+                      <option value="14px">14px</option>
+                      <option value="16px">16px</option>
+                      <option value="18px">18px</option>
+                      <option value="24px">24px</option>
+                      <option value="32px">32px</option>
+                      <option value="48px">48px</option>
+                    </select>
+                  </div>
+                  <label class="col-xs-2 form-label col-xs-offset-2">行高:</label>
+                  <div class="col-xs-3">
+                    <select class="form-control event-tool-lineHeight">
+                      <option value="14px">14px</option>
+                      <option value="16px">16px</option>
+                      <option value="18px">18px</option>
+                      <option value="20px">20px</option>
+                      <option value="28px">28px</option>
+                      <option value="34px">34px</option>
+                      <option value="40px">40px</option>
+                      <option value="56px">56px</option>
+                      <option value="68px">68px</option>
+                      <option value="80px">80px</option>                        
+                    </select>
+                  </div>
+                </div>
+                <div class="label-tools">
+                  <div class="btn btn-default event-tool-fontSize-ctrl" tag="bigger"><span class="glyphicon glyphicon-font"></span></div>
+                  <div class="btn btn-default event-tool-fontSize-ctrl" tag="smaller" style="padding: 6px 10px;"><span class="glyphicon glyphicon-font" style="font-size: 8px;"></span></div>
+                  <div class="btn btn-default event-tool-fontSize-bold"><span class="glyphicon glyphicon-bold"></span></div>
+                  <div class="btn btn-default event-tool-fontSize-italic"><span class="glyphicon glyphicon-italic"></span></div>
+                  <div class="btn btn-default event-tool-fontSize-underline"><span class="glyphicon glyphicon-text-width"></span></div>
+                  <div class="btn btn-default event-tool-align-left"><span class="glyphicon glyphicon-align-left"></span></div>
+                  <div class="btn btn-default event-tool-align-center"><span class="glyphicon glyphicon-align-center"></span></div>
+                  <div class="btn btn-default event-tool-align-right"><span class="glyphicon glyphicon-align-right"></span></div>
+                </div>
+              </article>
+            </section>
+            <section>
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#tool_label_color_main" data-toggle="tab">颜色</a></li>
+                <li><a href="#tool_label_color_more" data-toggle="tab">更多</a></li>
+              </ul>
+              <div class="btn-toggle" data-toggle="collapse" data-target="#tool_label_color">
+                <span class=" glyphicon glyphicon-chevron-up"></span>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              </div>
+              <div id="tool_label_color" class="collapse in tab-content">
+                <article class="tab-pane active" id="tool_label_color_main">
+                  <!--颜色-->
+                  <div class="tool-colors">
+                  </div>
+                </article>
+                <article class="tab-pane" id="tool_label_color_more">
+                  
+                </article>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+            <section>
+              <ul class="nav">
+                <li><a href="#">形状效果</a></li>
+              </ul>
+              <div class="btn-toggle" data-toggle="collapse" data-target="#tool_label_transform">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              </div>
+              <article id="tool_label_transform" class="collapse in form-horizontal">
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">宽度:</label>
+                  <div class="col-xs-7">
+                    <input class="form-control event-tool-width" type="number" value="" min="28"/>
+                  </div>
+                  <span class="unit">px</span>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">高度:</label>
+                  <div class="col-xs-7">
+                    <input class="form-control event-tool-height" type="number" value="" min="28"/>
+                  </div>
+                  <span class="unit">px</span>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">不透明度:</label>
+                  <div class="col-xs-7">
+                    <input class="form-control event-tool-opacity" type="number" value="" min="0" max="100"/>
+                  </div>
+                  <span class="unit">%</span>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">旋转:</label>
+                  <div class="col-xs-7">
+                    <input class="form-control event-tool-degree" type="number" value="0"/>
+                  </div>
+                  <span class="unit">°</span>
+                </div>
+              </article>
+            </section>
+          </div>
+          <!-- 按钮工具栏 -->
+          <div class="tab-pane" id="tool_button">
+            <section class="des">
+              <article>
+                <h1>按钮</h1>
+                <span>从下方的属性面板中选择一种按钮,可以改变颜色形状等.</span>
+              </article>
+            </section>
+            <section>
+              <ul class="nav">
+                <li><a href="#">内容</a></li>
+              </ul>
+              <div class="btn-toggle" data-toggle="collapse" data-target="#tool_button_content">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              </div>
+              <article id="tool_button_content" class="collapse in form-horizontal">
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">文字:</label>
+                  <div class="col-xs-9">
+                    <input class="form-control event-tool-text" value="" placeHolder="请输入按钮的文字"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">链接:</label>
+                  <div class="col-xs-9">
+                    <input class="form-control event-tool-link" value=""/>
+                  </div>
+                </div>
+              </article>
+            </section>
+            <section>
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#tool_button_color_font" data-toggle="tab">文字色</a></li>
+                <li><a href="#tool_button_color_bg" data-toggle="tab">填充色</a></li>
+                <li><a href="#tool_button_color_border" data-toggle="tab">边框色</a></li>
+              </ul>
+              <div class="btn-toggle" data-toggle="collapse" data-target="#tool_button_color">
+                <span class=" glyphicon glyphicon-chevron-up"></span>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              </div>
+              <div id="tool_button_color" class="collapse in tab-content">
+                <article class="tab-pane active" id="tool_button_color_font">
+                  <div class="tool-colors event-tool-fontColor">
+                  </div>
+                </article>
+                <article class="tab-pane" id="tool_button_color_bg">
+                  <div class="tool-colors event-tool-bgColor">
+                  </div>                  
+                </article>
+                <article class="tab-pane" id="tool_button_color_border">
+                  <div class="tool-colors event-tool-borderColor">
+                  </div>
+                </article>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+            <section>
+              <ul class="nav">
+                <li><a href="#">形状效果</a></li>
+              </ul>
+              <div class="btn-toggle" data-toggle="collapse" data-target="#tool_button_transform">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              </div>
+              <article id="tool_button_transform" class="collapse in form-horizontal">
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">圆角:</label>
+                  <div class="col-xs-7">
+                    <input class="form-control event-tool-radius" type="number" value="" min="0"/>
+                  </div>
+                  <span class="unit">px</span>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">边框:</label>
+                  <div class="col-xs-7">
+                    <input class="form-control event-tool-border" type="number" value="" min="0"/>
+                  </div>
+                  <span class="unit">px</span>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">宽度:</label>
+                  <div class="col-xs-7">
+                    <input class="form-control event-tool-width" type="number" value="" min="40"/>
+                  </div>
+                  <span class="unit">px</span>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">高度:</label>
+                  <div class="col-xs-7">
+                    <input class="form-control event-tool-height" type="number" value="" min="30"/>
+                  </div>
+                  <span class="unit">px</span>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">不透明度:</label>
+                  <div class="col-xs-7">
+                    <input class="form-control event-tool-opacity" type="number" value="" min="0" max="100"/>
+                  </div>
+                  <span class="unit">%</span>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-3 form-label">旋转:</label>
+                  <div class="col-xs-7">
+                    <input class="form-control event-tool-degree" type="number" value="0"/>
+                  </div>
+                  <span class="unit">°</span>
+                </div>
+              </article>
+            </section>
+          </div>
+          <!-- 图片工具栏 -->
+          <div class="tab-pane" id="tool_image">
+            <span>图片</span>
+          </div>
+          <!-- 底图工具栏 -->
+          <div class="tab-pane" id="tool_background">
+            <span>底图</span>
+          </div>
+          <!-- 音乐工具栏 -->
+          <div class="tab-pane" id="tool_music">
+            <span>音乐</span>
+          </div>
+        </div> 
+      </div>
+    </div>
+
+    <!--缩略图页面模板-->
+    <script type="text/template" id="sPageTmpl">
+      <li class="page-wrap">
+        <span class="page-num"><%=index + 1%></span>
+        <div class="s-page">
+          <div class="event-thumbView"></div>
+          <span class="page-btnrm glyphicon glyphicon-remove-circle"></span>
+        </div>
+      </li>
+    </script>
+
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="scripts/lib/jquery/dist/jquery.js"></script>
+    <script src="scripts/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="scripts/lib/rangy/rangy-core.min.js"></script>
+    <script src="scripts/lib/rangy/rangy-cssclassapplier.min.js"></script>
+    <script src="scripts/lib/rangy/rangy-selectionsaverestore.min.js"></script>
+    <script src="scripts/lib/rangy/rangy-serializer.min.js"></script>
+    <script src="scripts/lib/touchjs/touch.js"></script>
+    <script src="scripts/lib/underscore/underscore.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <script type="text/javascript" src="scripts/lib/listview.js"></script>    
+    <script type="text/javascript" src="scripts/lib/resizebox.js"></script>
+    
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script type="text/javascript" src="scripts/parts.js"></script>
+    <script type="text/javascript" src="scripts/project.js"></script>
+    <script type="text/javascript" src="scripts/pageViewer.js"></script>
+    <script type="text/javascript" src="scripts/designTool.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

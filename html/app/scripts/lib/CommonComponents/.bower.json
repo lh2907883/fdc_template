@@ -1,0 +1,28 @@
+{
+  "name": "CommonComponents",
+  "homepage": "https://github.com/chinakids/CommonComponents",
+  "authors": [
+    "chinakids <494063570@qq.com>",
+    "saymy <122279907@qq.com>",
+    "lh2907883 <lihao12518@163.com>"
+  ],
+  "description": "web dev common components",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "3a59cb9547",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3a59cb9547d580ebbbb297111b9a1d15c37212af"
+  },
+  "_source": "https://github.com/chinakids/CommonComponents.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/chinakids/CommonComponents.git"
+}

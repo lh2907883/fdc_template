@@ -1,0 +1,35 @@
+{
+  "name": "touchjs",
+  "version": "0.2.14",
+  "description": "clouda event and gesture lib touch.js",
+  "main": "touch.js",
+  "keywords": [
+    "touchjs",
+    "gesture",
+    "clouda",
+    "touch",
+    "mobile",
+    "gestures"
+  ],
+  "authors": [
+    "huangxin"
+  ],
+  "license": "MIT",
+  "homepage": "http://code.baidu.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.2.14",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.14",
+    "commit": "09ae6dbbee41ae0162e7a246ce601be2d7787e2a"
+  },
+  "_source": "git://github.com/brandnewera/touchjs.git",
+  "_target": "~0.2.14",
+  "_originalSource": "touchjs"
+}

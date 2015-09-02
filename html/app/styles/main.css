@@ -1,0 +1,316 @@
+/*****************************全局*******************************/
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Microsoft Yahei';
+}
+ul{
+  list-style-type: none;
+}
+
+#navbar {
+  background-color: #4fa8e3;
+  border-color: #080808;
+  min-height: 30px;
+}
+#navbar .navbar-header img{
+   width: 120px;
+   height: 30px;
+   margin: 5px 30px; 
+}
+#navbar .navbar-nav > li > a{
+  padding-top: 10px; 
+  padding-bottom: 10px;
+}
+#navbar .nav li:hover{
+  background-color: #3a7fb0
+}
+#navbar a{
+  color: #fff;
+}
+#navbar a span{
+  padding-left: 20px;
+}
+#navbar a span.new{
+  background: url("../images/new.png") no-repeat;
+}
+#navbar a span.preview{
+  background: url("../images/preview.png") no-repeat;
+}
+#navbar a span.myDoc{
+  background: url("../images/myDoc.png") no-repeat;
+}
+
+/*****************************中间部分*******************************/
+#centerWrap{
+  position: fixed;
+  left: 200px;
+  height: 100%;
+  padding: 0;
+}
+.simulator{
+  position: relative;
+  height: 480px;
+  width: 320px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+.simulator .group{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 480px;
+  width: 320px;
+}
+.simulator .group .page{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 480px;
+  width: 320px;
+}
+.simulator .group .page > *{
+  cursor: all-scroll;
+}
+.simulator .group .page > article[contenteditable="true"]{
+  cursor: text;
+}
+.pagesNavWrap{
+  text-align: center;
+}
+.pagesNavWrap ul{
+  display: inline-block;
+}
+#newPage{
+  background-color: #aaa;
+}
+.pagesNavWrap li{
+  cursor: pointer;
+  display: inline-block;
+  font-size: 19px;
+  line-height: 30px;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  background-color: #0c918e;
+  border-radius: 15px;
+}
+.pagesNavWrap li+li{  
+  margin-left: 5px;
+}
+.pagesNavWrap li .rm{
+  position: absolute;
+  margin-left: 0;
+  margin-top: -12px;
+  background-color: #fff;
+  border-radius: 12px;
+  height: 24px;
+  color: #000;
+  display: none;
+}
+.pagesNavWrap li:hover .rm{
+  display: initial;
+}
+
+/********************************Parts部分*********************************/
+.part-bold{}
+.part-italic{}
+.part-underline{}
+.part-font12{ font-size: 12px; }
+.part-font14{ font-size: 14px; }
+.part-font16{ font-size: 16px; }
+.part-font18{ font-size: 18px; }
+.part-font24{ font-size: 24px; }
+.part-font32{ font-size: 32px; }
+.part-font48{ font-size: 48px; }
+.part-font-yahei{ font-family: Microsoft YaHei !important; }
+.part-font-heiti{ font-family: 黑体 !important; }
+.part-font-serif{ font-family: serif !important; }
+
+
+/*****************************左侧缩略图部分*******************************/
+#mainWrap{
+  height: 100%;
+  padding-top: 41px;
+}
+.leftWrap{
+  position: fixed;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  padding: 0;
+  overflow-y: auto;
+}
+.page-wrap{
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+  cursor: pointer;
+}
+.page-num{
+  position: absolute;
+  left: 10px;
+  top:5px;
+  color: #fff;
+}
+.s-page{
+  width: 120px;
+  height: 180px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #eee;
+}
+.s-page-text-center{
+  line-height: 180px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 80px;
+  color: #aaa;
+}
+.page-btnrm{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color:#aaa;
+}
+.page-btnrm:hover{
+  color:#888;
+}
+.thumbView{
+  transform-origin: 0 0;
+  transform: scale(0.375, 0.375);
+}
+
+/*****************************右侧工具栏部分*******************************/
+#rightWrap{
+  position: fixed;
+  right: 0;
+  height: 100%;
+  padding: 0 10px 10px 10px;
+}
+#rightWrap ul.nav-left > li{
+  margin-left: 15px;
+}
+#rightWrap ul.nav-left > li.active{
+  margin-left: 0;
+}
+#rightWrap ul.nav-left > li > a {
+  margin-right: 0;
+  padding: 10px 5px 10px 15px;
+  border-bottom-left-radius: 24px;
+  border-top-left-radius: 24px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  color: #fff;
+  background-color: #428bca;
+  border: 0;
+}
+#rightWrap ul.nav-left > li.active > a, .nav-left > li.active > a:hover, .nav-left > li.active > a:focus {
+  border: 0;
+  background-color: orange;
+  padding: 10px 5px 10px 20px;
+}
+
+#toolsBtn{
+  float: left;
+  margin-top:50px;
+}
+#tools{
+  width: 300px;
+  height: 100%;
+  border: 2px solid orange;
+}
+#tools section article{
+  padding: 10px 15px 6px 15px;
+}
+#tools section article h1{
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+#tools section{
+  position: relative;
+}
+#tools section + section{
+  margin-top: 5px;
+}
+#tools section .nav{
+  background-color: #4fa8e3;
+}
+#tools section .nav > li > a {
+  padding: 5px;
+}
+#tools section .nav > li{
+  float: left;
+  margin-bottom: 0;
+}
+#tools section .nav > li:first-child{
+  margin-left: 20px;
+}
+#tools section .nav > li > a{
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+  background-color: #4fa8e3;
+}
+#tools section .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  cursor: default;
+  background-color: #428bca;
+}
+.btn-toggle{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+.collapsed > .glyphicon-chevron-up{
+  display: none;
+}
+.collapsed > .glyphicon-chevron-down{
+  display: block !important;
+}
+[data-toggle] > .glyphicon-chevron-down{
+  display: none;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  padding: 0;
+}
+.form-label{
+  margin-top: 3px;
+}
+.form-control{
+  height: auto;
+  padding: 2px 4px;
+}
+.form-group{
+  margin: 0 0 6px 0 !important;
+}
+.unit{
+  margin-left: 6px;
+}
+.label-tools div.btn{
+  padding: 6px 9px;
+  margin-bottom: 4px;
+}
+.tool-colors div.color {
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  border: 1px solid #dedede;
+  display: inline-block;
+  float: left;
+  margin: 2px;
+  cursor: pointer;
+}
+.tool-colors div.active {
+  border: 3px solid #5a5049;
+}
+/*颜色工具箱透明色*/
+.color-picker-none { background-image: url("../images/color-none.png"); background-position: -14px -1px;}

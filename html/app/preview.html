@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="scripts/lib/normalize.css/normalize.css" />
+    <link rel="stylesheet" href="scripts/lib/animate.css/animate.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/preview.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="scripts/lib/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+  </head>
+  <body>
+    <div id="pagesWrap" class="simulator"></div> 
+
+    <!--缩略图页面模板-->
+    <script type="text/template" id="sPageTmpl">
+      <li class="page-wrap">
+        <span class="page-num"><%=index + 1%></span>
+        <div class="s-page">
+          <div class="event-thumbView"></div>
+          <span class="page-btnrm glyphicon glyphicon-remove-circle"></span>
+        </div>
+      </li>
+    </script>
+
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="scripts/lib/jquery/dist/jquery.js"></script>
+    <script src="scripts/lib/touchjs/touch.js"></script>
+    <script src="scripts/lib/underscore/underscore.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!--
+    <script>
+        document.body.addEventListener('touchmove', function(event) {
+          event.preventDefault();
+        }, false);
+    </script>
+    -->
+    
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script type="text/javascript" src="scripts/parts.js"></script>
+    <script type="text/javascript" src="scripts/project.js"></script>
+    <script type="text/javascript" src="scripts/pageViewer.js"></script>
+    <script src="scripts/preview.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>autoComplete demo</title>
+    <meta name="description" content="">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  </head>  
+  <body>
+    <div style="float:left; width:230px;margin: 30px;">
+      <input id="login" type="text" class="form-control" placeholder="请输入邮箱" maxlength="11">
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+    <script src="../autoComplete.js"></script>
+    <script type="text/javascript">
+      var emailSource = ["sina.com", "163.com", "qq.com", "126.com", "vip.sina.com", "sina.cn", "hotmail.com", "gmail.com", "sodu.com", "139.com", "wo.com.cn", "189.cn", "21cn.com"];
+      /**
+       * 邮箱快速选择(自动联想,在输入@后下拉菜单才显示)
+       */
+      // $("#login").autoComplete({
+      //   //maxHeight: 200,
+      //   minWidth: 250,
+      //   checkActiveCallback: function(inputValue){
+      //     return /^[^@\s]+@([^@\s]*)$/.test(inputValue);
+      //   },
+      //   getSourceCallback: function(inputValue, e){
+      //     var m = inputValue.match(/^([^@\s]+@)([^@\s]*)$/);
+      //     if(m){
+      //       var v = m[1]
+      //       var rex = m[2];
+      //       e.source($.map(emailSource, function(item){
+      //         if(item.indexOf(rex) == 0){
+      //           return v + item;
+      //         }
+      //       }), false);
+      //     }        
+      //   }
+      // });
+
+      /**
+       * 一个最简单的demo
+       */
+      $("#login").autoComplete({
+        minLength: 1,
+        minWidth: 250,
+        title: "请选择邮箱类型",
+        getSourceCallback: function(inputValue, e){
+          e.source(emailSource);
+        }
+      });
+    </script>
+  </body>
+</html>

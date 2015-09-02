@@ -1,0 +1,27 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+ 
+<body>
+    <input id="btn1" type="button" value="slideOutUp"/>
+    <div class="simulator" style="border:1px solid #333;">
+      <div class="pages" style="height:480px;">
+      </div>
+    </div>
+
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
+      $("input[type='button']").click(function(){
+        var x = $(this).val();
+        $('.pages').addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+          $(this).removeClass(x + ' animated');
+          $(this).css("margin-top","-480px");
+        });
+      });
+    </script>
+</body>
+</html>

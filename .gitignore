@@ -1,0 +1,4 @@
+html/node_modules
+html/dist
+**/bak
+**/*.TMP

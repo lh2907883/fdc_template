@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+    <style>
+        #tools{
+            margin:10px;
+            list-style-type: none;
+        }
+        #tools li{
+            float:left;
+        }
+        #tools li+li{
+            margin-left:10px;
+        }
+        article:focus{
+            outline: none;
+        }
+        
+        *.bold{}
+        *.italic{}
+        *.underline{}
+
+        *.font14{
+            font-size: 14px;
+        }
+        *.font20{
+            font-size: 20px;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="btn btn-default event-tool-fontSize-bigger"><span class="glyphicon glyphicon-font"></span></div>
+      <div class="btn btn-default event-tool-fontSize-smaller" style="padding: 6px 10px;"><span class="glyphicon glyphicon-font" style="font-size: 8px;"></span></div>
+      <div class="btn btn-default event-tool-fontSize-bold"><span class="glyphicon glyphicon-bold"></span></div>
+      <div class="btn btn-default event-tool-fontSize-italic"><span class="glyphicon glyphicon-italic"></span></div>
+      <div class="btn btn-default event-tool-fontSize-underline"><span class="glyphicon glyphicon-text-width"></span></div>
+      <div class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span></div>
+      <div class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span></div>
+      <div class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span></div>
+    <ul id="tools">
+        <li><input type="button" value="B" tag="bold"></li>
+        <li><input type="button" value="I" tag="italic"></li>
+        <li><input type="button" value="U" tag="underline"></li>
+        <li><input type="button" value="getSelectionInfo" tag="getSelectionInfo"></li>
+        <li><input type="button" value="font14" tag="font14"></li>
+        <li><input type="button" value="font20" tag="font20"></li>
+    </ul>
+    <div style="clear:both;"></div>
+    <div style="margin:50px;">
+        <article onkeydown="showlog(event);" class="component text" style="font-family: 黑体; width: 200px; height: 200px; line-height: 20px;" data-duration="1.2" data-delay="0.8" data-animation="" contenteditable="true">
+            <!-- Association football is a sport played between two teams. It is usually called football, but in some countries, such as the United States, it is called soccer. In Japan, New Zealand, South Africa, Australia, Canada and Republic of Ireland, both words are commonly used.
+
+            Each team has 11 players on the field. One of these players is the goalkeeper, and the other ten are known as "outfield players." The game is played by kicking a ball into the opponent's goal. A match has 90 minutes of play, with a break of 15 minutes in the middle. The break in the middle is called half-time. -->
+            Association football is a spor<b class="bold">t played between two teams. It is usually called footba<u class="underline">ll, but in some countries, suc</u></b><u class="underline">h as the United States, it is called soccer.</u><i class="italic"><u class="underline"><b class="bold"> In Japan, New Zealand, South</b></u><b class="bold"> Africa, Australia, Canada and Republic of Ir</b></i><b class="bold">eland, both words ar<i class="italic">e comm<u class="underline">only used. Each team has 11 players on the field. One of these players is the goa</u></i></b><i class="italic"><u class="underline">lkeeper, and the other ten are known as "outfield players."</u> The game is played by ki</i>cking a ball into the opponent\'s goal. A match has 90 minutes of play, with a break of 15 minutes in the middle. The break in the middle is called half-time.
+        </article>
+    </div>
+
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/CommonComponents/dest/environment/environment.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script src="../bower_components/rangy/rangy-core.js"></script>
+    <script src="../bower_components/rangy/rangy-cssclassapplier.js"></script>
+
+    <!-- endbuild -->
+    <script type="text/javascript">
+        function showlog(e){
+            //如果是F4
+            if(e.keyCode == 115){
+                var selection= window.getSelection ? window.getSelection() : document.selection;
+                console.log(selection);
+                // alert(selection);
+                var range = selection.getRangeAt(0);
+                range.deleteContents();
+            }
+        }        
+        rangy.init();
+        var toggleTools = {
+            //粗体
+            "bold": rangy.createCssClassApplier("bold", {
+                elementTagName: "b"
+            }),
+            //斜体
+            "italic": rangy.createCssClassApplier("italic", {
+                elementTagName: "i"
+            }),
+            //下划线     
+            "underline": rangy.createCssClassApplier("underline", {
+                elementTagName: "u"
+            }),
+            "font14": rangy.createCssClassApplier("font14"),
+            "font20": rangy.createCssClassApplier("font20"),
+            'getSelectionInfo': {
+                toggleSelection: function(){
+                    var sel = rangy.getSelection();
+                    if(sel.rangeCount){
+                        var s = sel.getRangeAt(0);
+                        var dom = s.startContainer.parentNode;
+                        console.log(dom);
+                        console.log({
+                            "font-size": $(dom).css("font-size"),
+                            "font-family": $(dom).css("font-family"),
+                            "isB": $(dom).closest("b").length > 0,
+                            "isI": $(dom).closest("i").length > 0,
+                            "isU": $(dom).closest("u").length > 0
+                        });
+                    }
+                }
+            }
+        };
+
+        $(".event-tool-fontSize-bold").click(function(){
+            toggleTools.bold.toggleSelection();
+        });
+
+        $("#tools input").click(function(){            
+            var tag = $(this).attr("tag");
+            toggleTools[tag].toggleSelection();
+        });
+
+        var undoToRange = function(){            
+            var ranges = rangy.getSelection();
+            for(var i=0; i<ranges.rangeCount; i++){
+                toggleTools.font20.undoToRange(ranges.getRangeAt(i));
+            }
+        }
+        var applyToRange = function(){            
+            var ranges = rangy.getSelection();
+            for(var i=0; i<ranges.rangeCount; i++){
+                toggleTools.font20.applyToRange(ranges.getRangeAt(i));
+            }
+        }
+    </script>
+</body>
+</html>
